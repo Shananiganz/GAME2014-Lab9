@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class PlayerBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
         health = FindObjectOfType<PlayerHealth>().GetComponent<HealthBarController>();
         life = FindObjectOfType<LifeCounterController>();
+        health.value = 3;
         deathPlane = FindObjectOfType<DeathPlaneController>();
         soundManager = FindObjectOfType<SoundManager>();
         leftStick = (Application.isMobilePlatform) ? GameObject.Find("LeftStick").GetComponent<Joystick>() : null;
@@ -47,7 +49,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (health.value <= 0)
         {
             life.UpdateLife(-1);
-            
+
             if (life.value > 0)
             {
                 health.ResetHealth();
@@ -56,7 +58,10 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
 
-        // TODO: if life < 0 -> Load the game over screen
+        if (life.value <= 0)
+        {
+            SceneManager.LoadScene("End");
+        }
     }
 
     void FixedUpdate()

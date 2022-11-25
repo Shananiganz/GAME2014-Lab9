@@ -19,7 +19,7 @@ public class LifeCounterController : MonoBehaviour
     public void ResetLives()
     {
         value = 3;
-        lifeImage.sprite = Resources.Load<Sprite>("Sprites/Life3");
+        lifeImage.sprite = Resources.Load<Sprite>("Sprites/Life-3");
     }
 
     public void UpdateLife(int amount)

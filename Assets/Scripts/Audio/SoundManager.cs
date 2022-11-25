@@ -9,7 +9,6 @@ public class SoundManager : MonoBehaviour
     public List<AudioSource> channels;
     private List<AudioClip> audioClips;
 
-    // Start is called before the first frame update
     void Awake()
     {
         channels = GetComponents<AudioSource>().ToList();
@@ -22,7 +21,8 @@ public class SoundManager : MonoBehaviour
         audioClips.Add(Resources.Load<AudioClip>("Audio/JumpSound"));
         audioClips.Add(Resources.Load<AudioClip>("Audio/HurtSound"));
         audioClips.Add(Resources.Load<AudioClip>("Audio/DeathSound"));
-        audioClips.Add(Resources.Load<AudioClip>("Audio/MainSoundTrack"));
+        audioClips.Add(Resources.Load<AudioClip>("Audio/MainSoundtrack"));
+        audioClips.Add(Resources.Load<AudioClip>("Audio/EndSoundtrack"));
     }
    
     public void PlaySoundFX(Channel channel, Sound sound)
@@ -31,9 +31,9 @@ public class SoundManager : MonoBehaviour
         channels[(int)channel].Play();
     }
 
-    public void PlayMusic()
+    public void PlayMusic(Sound sound)
     {
-        channels[(int)Channel.MUSIC].clip = audioClips[(int)Sound.MUSIC];
+        channels[(int)Channel.MUSIC].clip = audioClips[(int)sound];
         channels[(int)Channel.MUSIC].volume = 0.25f;
         channels[(int)Channel.MUSIC].loop = true;
         channels[(int)Channel.MUSIC].Play();
