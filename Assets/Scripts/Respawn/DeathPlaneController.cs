@@ -19,8 +19,7 @@ public class DeathPlaneController : MonoBehaviour
             if (player.life.value > 0)
             {
                 ReSpawn(other.gameObject);
-
-                // TODO: Play the death sound
+                FindObjectOfType<SoundManager>().PlaySoundFX(Channel.PLAYER_DEATH_FX, Sound.DEATH);
             }
         }
     }
