@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7832001938914313589}
   - component: {fileID: 7832001938914313586}
   - component: {fileID: 3444756370010508691}
+  - component: {fileID: -5363769423478951235}
   m_Layer: 5
   m_Name: HealthSystem
   m_TagString: Untagged
@@ -85,7 +86,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7832001938914313586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +121,18 @@ MonoBehaviour:
     offset: {x: 0, y: 0}
     x: 0
     y: 0
+--- !u!114 &-5363769423478951235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7832001938914313587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8bb33705734a140bf26f8ff1e5eb06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7832001939191619537
 GameObject:
   m_ObjectHideFlags: 0
